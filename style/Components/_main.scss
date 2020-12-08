@@ -1,0 +1,51 @@
+.main{
+    flex: 1 0 auto;
+    position: relative;
+    &__text{
+        margin-top: 2rem;
+        h1,h3 {
+            margin: 0.5rem 0;
+            color: $text-color;
+        }
+    }
+    &__search {
+        position: relative;
+        padding: 1rem;
+        background-color: #ECECEC;
+        width: fit-content;
+        border-radius: 15px;
+
+        &-button{
+            background-color:transparent;
+            border: none;
+            outline: 0;
+            padding: 0.5rem;
+        }
+
+        &-input {
+            background: transparent;
+            border: none;
+            padding: 0.5rem;
+            margin-left: 0.5rem;
+            outline: 0;
+            border-bottom: 1px solid #707070
+        }
+    }
+}
+
+@media (min-width: 900px){
+    .main {
+        order: 2;
+        flex: 10;
+    }
+}
+
+@media(min-height: 700px){
+    .main__text{
+        h1 {font-size: 2.75rem }
+        h3 {font-size: 2rem }
+    }
+    .main__search {
+        input { font-size: 1.75rem}
+    }
+}

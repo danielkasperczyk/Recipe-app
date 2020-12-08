@@ -1,0 +1,112 @@
+.footer {
+    flex-shrink: 0;
+    width: 100%;
+    background: #65FF5F;
+    border-radius: 0 20px 0 0 ;
+    position: relative;
+
+    &__button {
+        cursor: pointer;
+        padding: 1rem;
+        background-color: transparent;
+        border: none;
+        outline: 0;
+    }
+    &__favorite {
+        position: absolute;
+        overflow-y: auto;
+        background-color: rgba(0,0,0, .85);
+        max-height: 300px;
+        max-width: 400px;
+        bottom: 50px;
+        left: 0;
+        right: 0;
+        width: 70%;
+        margin: 0 auto;
+        color: #fff;
+        padding: 0;
+        &_item{
+            display: flex;
+            margin-bottom: 1rem;
+            &:last-child{
+                margin-bottom: 0;
+            }
+            img{
+                cursor: pointer;
+                width: 100px;
+                height: 80px;
+            }
+            &_events {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                font-size: 1.3rem;
+                margin-left: 1rem;
+                p{ cursor: pointer }
+                
+
+                &-unfav {
+                    cursor: pointer;
+                    width: auto;
+                    padding: 0.5rem;
+                    margin-right: 3rem;
+                    align-self: flex-end;
+                    outline: 0;
+                    border: none;
+                    background-color: transparent;
+                    i{
+                        color: #FF0000;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width: 900px){
+    .footer {
+        order: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        & .container{
+            text-align: center;
+        }
+        &__button {
+            font-size: 2rem;    
+
+        }
+        &__favorite {
+            width: 200px;
+            bottom: 20px;
+            left: calc(100% + 20px);
+            i { font-size: 2rem }
+            &_item{
+                padding: 0.5rem;    
+            }
+        }
+    }
+}
+.hide__fav{
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .footer__favorite {
+        overflow: scroll;
+        &::-webkit-scrollbar {
+            width: auto;
+            background: auto;
+        }
+    }
+}
+@media (min-width: 1000px){
+    .footer__favorite {
+        width: 400px;
+        img {
+            width: 120px;
+            height: 100px;
+        }
+        p { font-size: 1.75rem }
+    }
+}
